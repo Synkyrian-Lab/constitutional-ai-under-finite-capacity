@@ -50,3 +50,7 @@ For outward/public presentation, the `policy_translation_brief.pdf` may be prese
 Copyright © 2026 Panagiotis Kalomoirakis. All rights reserved.
 
 This repository is publicly available for reading, inspection, citation, and evaluation. No broader reuse, redistribution, modification, or commercialization rights are granted except with prior written permission from the copyright holder.
+
+## Archived record
+
+Canonical archived record (Zenodo DOI): https://doi.org/10.5281/zenodo.19765326
