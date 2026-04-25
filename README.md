@@ -44,3 +44,9 @@ For internal canonical reading order, start with:
 6. `docs/policy_translation_brief.pdf`
 
 For outward/public presentation, the `policy_translation_brief.pdf` may be presented first as an entry document.
+
+## Rights
+
+Copyright © 2026 Panagiotis Kalomoirakis. All rights reserved.
+
+This repository is publicly available for reading, inspection, citation, and evaluation. No broader reuse, redistribution, modification, or commercialization rights are granted except with prior written permission from the copyright holder.
