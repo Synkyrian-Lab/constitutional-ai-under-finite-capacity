@@ -2,13 +2,24 @@
 
 This repository contains the canonical package for Constitutional AI under finite capacity together with an external-safe reference implementation surface.
 
-## Repository structure
+## Canonical documents
 
-### Source documents
-- `docs_src/`
+- `docs/instrument_index.pdf`
+- `docs/series_note.pdf`
+- `docs/constitution.pdf`
+- `docs/force_and_applicability.pdf`
+- `docs/application_profile.pdf`
+- `docs/evidence_specification.pdf`
+- `docs/questions_limits_misreadings.pdf`
+- `docs/policy_translation_brief.pdf`
+
+## Repository structure
 
 ### Compiled documents
 - `docs/`
+
+### Source documents
+- `docs_src/`
 
 ### External-safe reference implementation
 - `reference_implementation/`
@@ -22,7 +33,14 @@ This repository presents:
 
 This repository does **not** contain the full TER runtime.
 
-## Note on compiled outputs
+## Reading guidance
 
-At present, the repository includes the document sources under `docs_src/`.
-Compiled PDFs may be added under `docs/` after final compilation and verification.
+For internal canonical reading order, start with:
+1. `docs/constitution.pdf`
+2. `docs/force_and_applicability.pdf`
+3. `docs/application_profile.pdf`
+4. `docs/evidence_specification.pdf`
+5. `docs/questions_limits_misreadings.pdf`
+6. `docs/policy_translation_brief.pdf`
+
+For outward/public presentation, the `policy_translation_brief.pdf` may be presented first as an entry document.

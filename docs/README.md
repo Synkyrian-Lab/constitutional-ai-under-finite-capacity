@@ -1,6 +1,14 @@
 # Compiled PDFs
 
-This folder is intended for compiled PDF outputs of the Constitutional AI under Finite Capacity package.
+This folder contains the compiled PDF outputs of the Constitutional AI under Finite Capacity package.
 
-At present, the repository includes the LaTeX source materials under `docs_src/`.
-Compiled PDFs may be added here after final compilation and verification.
+## Included documents
+
+- `instrument_index.pdf`
+- `series_note.pdf`
+- `constitution.pdf`
+- `force_and_applicability.pdf`
+- `application_profile.pdf`
+- `evidence_specification.pdf`
+- `questions_limits_misreadings.pdf`
+- `policy_translation_brief.pdf`
