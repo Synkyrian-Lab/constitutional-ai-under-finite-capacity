@@ -1,0 +1,440 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+
+\onehalfspacing
+
+\title{Minimal Reviewable Evidence Specification\\
+for Constitutional AI}
+\author{Panagiotis Kalomoirakis\\
+Independent Researcher, Synkyria Project}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document specifies a minimal reviewable evidence surface for AI systems claiming constitutional operation under finite capacity. It does not define a full audit standard, implementation protocol, or legal compliance framework. Its narrower purpose is to state the minimum review artefacts required for a constitutional claim to be inspectable rather than merely asserted. The specification defines the evidence objects, their minimum fields, integrity requirements, scope declarations, certificate discipline, and non-claim boundaries. It is intended to function as a companion object to a constitutional article draft and one or more application profiles.
+\end{abstract}
+
+\section{Status of this document}
+
+This document is a \textbf{minimal evidence specification}. It does not prove that any AI system is safe, ethical, lawful, unbiased, or fit for deployment in a specific domain. It specifies only the minimum evidence conditions under which a constitutional claim may become reviewable.
+
+Its function is therefore narrow:
+
+\begin{quote}
+to prevent constitutional language from floating free of inspectable evidence.
+\end{quote}
+
+\section{Purpose}
+
+A constitutional AI claim must not remain a slogan. If a system claims that it:
+\begin{itemize}[leftmargin=2em]
+    \item distinguishes admissibility from execution,
+    \item can hold or refuse lawfully,
+    \item preserves witness,
+    \item remains reviewable under finite capacity,
+\end{itemize}
+then a minimum evidence layer must exist through which those claims may be inspected.
+
+This specification defines that minimum layer.
+
+\section{Scope}
+
+This specification applies to AI systems that make claims such as:
+\begin{itemize}[leftmargin=2em]
+    \item constitutional operation,
+    \item reviewable refusal,
+    \item explicit holding,
+    \item witness-preserving boundary governance,
+    \item bounded admissibility discipline,
+    \item or certificate-bearing accountable operation.
+\end{itemize}
+
+It may be used together with:
+\begin{itemize}[leftmargin=2em]
+    \item a constitutional article draft,
+    \item an application profile,
+    \item a domain-specific deployment profile,
+    \item or a runtime demonstration pack.
+\end{itemize}
+
+\section{Evidence principle}
+
+The core evidence principle is:
+
+\begin{quote}
+No constitutional act without witness; no witness without scope; no scope without review conditions.
+\end{quote}
+
+Accordingly, a minimal reviewable evidence package must always make visible:
+\begin{itemize}[leftmargin=2em]
+    \item \textbf{what} act occurred,
+    \item \textbf{why} it was declared,
+    \item \textbf{under which system and profile} it occurred,
+    \item \textbf{what the evidence does and does not support},
+    \item and \textbf{how integrity is preserved}.
+\end{itemize}
+
+\section{Minimal evidence package}
+
+A minimal reviewable evidence package should contain, at minimum, the following artefacts:
+
+\begin{enumerate}[leftmargin=2em,label=\arabic*.]
+    \item a \texttt{manifest.json}
+    \item an action trace such as \texttt{actions.jsonl}
+    \item optionally, a frame or state trace such as \texttt{frames.jsonl}
+    \item an integrity file such as \texttt{checksums.sha256}
+    \item a short natural-language scope note such as \texttt{README.md}
+    \item and, where a verdict is issued, a \texttt{certificate.json} or certificate envelope
+\end{enumerate}
+
+These filenames are illustrative rather than mandatory. What is mandatory is the review function they serve.
+
+\section{Required artefact functions}
+
+\subsection{Manifest}
+
+The manifest identifies the evidence package.
+
+It should minimally declare:
+\begin{itemize}[leftmargin=2em]
+    \item system name,
+    \item profile name,
+    \item version,
+    \item date or timestamp,
+    \item scenario or run label,
+    \item applicable domain profile,
+    \item relevant configuration scope,
+    \item and package contents.
+\end{itemize}
+
+\subsection{Action trace}
+
+The action trace records constitutionally significant acts.
+
+It should minimally allow a reviewer to inspect:
+\begin{itemize}[leftmargin=2em]
+    \item event order,
+    \item the declared act,
+    \item the associated reason label or reason family,
+    \item the interaction or step identifier,
+    \item and any scoped witness object or pointer attached to the act.
+\end{itemize}
+
+\subsection{Frame or state trace}
+
+Where needed, the frame trace records the surrounding runtime surface within which an act occurred.
+
+It may include:
+\begin{itemize}[leftmargin=2em]
+    \item local telemetry,
+    \item bounded pressure indicators,
+    \item tool state,
+    \item review-relevant flags,
+    \item or other declared witness fields.
+\end{itemize}
+
+It is not mandatory in all settings, but where omitted, the package must still remain reviewable through the available artefacts.
+
+\subsection{Integrity file}
+
+The integrity file allows the reviewer to verify that the package has not been silently altered.
+
+It should minimally support file-level integrity checking across the included artefacts.
+
+\subsection{Scope note}
+
+The scope note explains:
+\begin{itemize}[leftmargin=2em]
+    \item what is being claimed,
+    \item what is not being claimed,
+    \item what profile or scenario the package belongs to,
+    \item what limitations govern interpretation,
+    \item and what a reviewer may legitimately conclude from the package.
+\end{itemize}
+
+\subsection{Certificate object}
+
+Where a certificate is issued, it must remain subordinate to the evidence.
+
+A certificate must not replace the evidence package. It may summarise, but it must not erase ambiguity, scope limits, or lower-layer qualifications.
+
+\section{Minimum fields}
+
+\subsection{Minimum fields for \texttt{manifest.json}}
+
+A minimal manifest should include fields equivalent to the following:
+
+\begin{center}
+\begin{tabular}{>{\ttfamily}p{4cm} p{9cm}}
+\toprule
+field & function \\
+\midrule
+system\_name & identifies the system under review \\
+profile\_name & identifies the relevant application or domain profile \\
+version & identifies the system/profile version \\
+run\_label & identifies the specific run or evidence instance \\
+timestamp\_utc & anchors the package in time \\
+package\_contents & lists included artefacts \\
+scope & states what this package is meant to evidence \\
+non\_claims & states what this package does not establish \\
+integrity\_method & identifies how integrity is checked \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Minimum fields for an action trace}
+
+Each constitutionally significant line or event should minimally expose fields equivalent to:
+
+\begin{center}
+\begin{tabular}{>{\ttfamily}p{4cm} p{9cm}}
+\toprule
+field & function \\
+\midrule
+step / event\_id & preserves event order \\
+timestamp\_utc & anchors the event in time \\
+action\_type & records the declared act \\
+reason\_code & records why the act was declared \\
+witness & attaches a bounded review object or pointer \\
+profile\_version & ties the act to a declared profile/version \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Minimum fields for a certificate}
+
+If used, a certificate should minimally expose fields equivalent to:
+
+\begin{center}
+\begin{tabular}{>{\ttfamily}p{4cm} p{9cm}}
+\toprule
+field & function \\
+\midrule
+certificate\_type & states the type of verdict object \\
+scope & states what is being certified \\
+status & states the verdict or classification \\
+qualifications & states lower-layer limits or caveats \\
+evidence\_refs & points back to the supporting evidence \\
+non\_claims & prevents over-interpretation \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Act evidence requirements}
+
+\subsection{\texttt{ACCEPT}}
+
+An \texttt{ACCEPT} event should be reviewable as an explicit admission of continuation.
+
+Minimal review requirement:
+\begin{itemize}[leftmargin=2em]
+    \item the act must be explicit,
+    \item it must not be inferred merely from the presence of output,
+    \item and it must remain tied to a declared profile and reasonable scope.
+\end{itemize}
+
+\subsection{\texttt{HOLD}}
+
+A \texttt{HOLD} event must not appear as passive delay, silent wait, or hidden buffering.
+
+Minimal review requirement:
+\begin{itemize}[leftmargin=2em]
+    \item the act must be explicit,
+    \item it must carry a reason family,
+    \item and the package must make visible that lawful continuation was deferred rather than silently abandoned.
+\end{itemize}
+
+\subsection{\texttt{REFUSE}}
+
+A \texttt{REFUSE} event must not be substituted by timeout, unexplained absence, or opaque failure.
+
+Minimal review requirement:
+\begin{itemize}[leftmargin=2em]
+    \item the refusal must be explicit,
+    \item it must carry a reason family,
+    \item and it must remain inspectable as a constitutional act rather than a transport or infrastructure accident.
+\end{itemize}
+
+\subsection{Extension acts}
+
+If the system declares extension acts such as \texttt{ESCALATE}, \texttt{TRANSFER}, or \texttt{RE-DESCRIBE}, the evidence package must make visible:
+\begin{itemize}[leftmargin=2em]
+    \item that the extension act occurred,
+    \item under what declared scope it is valid,
+    \item and how responsibility and witness are preserved across the transition.
+\end{itemize}
+
+\section{Reason-label discipline}
+
+Reason labels shall be:
+\begin{itemize}[leftmargin=2em]
+    \item declared,
+    \item scoped,
+    \item semantically stable across a package or profile,
+    \item and sufficient for later review.
+\end{itemize}
+
+Reason labels need not expose raw thresholds, coefficients, or proprietary mechanisms. However, they must not be so vague that the act becomes unreviewable.
+
+Illustrative reason families include:
+\begin{itemize}[leftmargin=2em]
+    \item \texttt{OVERLOAD}
+    \item \texttt{UNDER\_REVIEW}
+    \item \texttt{SAFETY\_BOUNDARY}
+    \item \texttt{SCOPE\_LIMIT}
+    \item \texttt{INSUFFICIENT\_BASIS}
+    \item \texttt{ESCALATION\_REQUIRED}
+\end{itemize}
+
+\section{Witness discipline}
+
+A witness object may be minimal, but it must not be empty.
+
+At minimum, the witness must help the reviewer answer:
+
+\begin{quote}
+Why should this event count as a constitutionally meaningful act under the declared profile?
+\end{quote}
+
+A witness may be:
+\begin{itemize}[leftmargin=2em]
+    \item inline in the action trace,
+    \item attached as a bounded object,
+    \item or referenced via a linked artefact,
+\end{itemize}
+provided that it remains accessible and scoped.
+
+\section{Scope and non-claim discipline}
+
+Every evidence package must explicitly distinguish:
+\begin{itemize}[leftmargin=2em]
+    \item \textbf{what it supports},
+    \item \textbf{what it illustrates},
+    \item \textbf{what it does not prove},
+    \item and \textbf{under what profile or scenario it is valid}.
+\end{itemize}
+
+This is necessary to prevent:
+\begin{itemize}[leftmargin=2em]
+    \item witness inflation,
+    \item certificate overreach,
+    \item demo-to-universal drift,
+    \item and public-facing overclaim.
+\end{itemize}
+
+\section{Qualification inheritance}
+
+No certificate or higher-level summary may erase unresolved lower-layer weakness.
+
+Therefore:
+\begin{itemize}[leftmargin=2em]
+    \item if the evidence is scenario-bound, the certificate must say so;
+    \item if the witness is partial, the certificate must say so;
+    \item if lower-layer instability remains unresolved, the higher verdict must inherit that qualification explicitly.
+\end{itemize}
+
+A reviewer must never be asked to treat a high-level verdict as stronger than the evidence beneath it.
+
+\section{Protected non-disclosure}
+
+This specification does not require full exposure of:
+\begin{itemize}[leftmargin=2em]
+    \item raw thresholds,
+    \item model weights,
+    \item proprietary parameters,
+    \item or security-sensitive internals.
+\end{itemize}
+
+But if such material is withheld, the package must still preserve sufficient witness for meaningful review.
+
+Non-disclosure is constitutionally valid only if reviewability survives.
+
+\section{Minimal package example}
+
+A minimal reviewable evidence package may therefore look like:
+
+\begin{verbatim}
+/
+|- manifest.json
+|- actions.jsonl
+|- frames.jsonl           (optional but recommended where relevant)
+|- checksums.sha256
+|- certificate.json       (optional, if a verdict is issued)
+|- README.md
+\end{verbatim}
+
+The exact filenames may vary. The constitutional requirement lies in the review function, not in the filename itself.
+
+\section{Failure modes this specification is meant to prevent}
+
+This specification is designed to reduce the risk of:
+\begin{itemize}[leftmargin=2em]
+    \item silent degradation,
+    \item timeout-as-refusal,
+    \item unscoped refusal,
+    \item witness-free continuation,
+    \item certificate theatre,
+    \item opaque escalation,
+    \item non-reviewable holding,
+    \item and scope drift between evidence and public claim.
+\end{itemize}
+
+\section{Non-claims}
+
+A package satisfying this specification does \emph{not} by itself prove:
+\begin{itemize}[leftmargin=2em]
+    \item ethical legitimacy,
+    \item legal compliance,
+    \item universal safety,
+    \item fairness,
+    \item domain fitness,
+    \item or deployment readiness.
+\end{itemize}
+
+It proves something narrower:
+
+\begin{quote}
+that the constitutional claim being made has been attached to a minimum reviewable evidence surface.
+\end{quote}
+
+\section{Minimal conformance checklist}
+
+A package minimally conforms to this specification only if all of the following are true:
+
+\begin{enumerate}[leftmargin=2em,label=\arabic*.]
+    \item It identifies the system, profile, version, and evidence instance.
+    \item It preserves an explicit action trace for constitutionally significant acts.
+    \item It includes a manifest stating scope and non-claims.
+    \item It includes an integrity mechanism.
+    \item It provides reason-label discipline for non-trivial acts.
+    \item It preserves bounded witness for later review.
+    \item It distinguishes evidence from certificate.
+    \item It preserves qualification inheritance across levels.
+    \item It does not allow non-disclosure to erase reviewability.
+    \item It does not present the package as stronger than its declared scope.
+\end{enumerate}
+
+\section{Closing statement}
+
+A constitutional claim without evidence is rhetoric.  
+Evidence without scope is ambiguity.  
+A certificate without qualification is overreach.  
+
+This specification therefore establishes a minimal rule: if an AI system claims constitutional operation under finite capacity, it must leave behind a reviewable evidence surface through which its boundary acts can be inspected. Without that surface, constitutional language remains structurally weak.
+
+\end{document}

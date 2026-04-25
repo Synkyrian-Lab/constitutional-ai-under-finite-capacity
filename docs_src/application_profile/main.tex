@@ -1,0 +1,322 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{array}
+
+\onehalfspacing
+
+\title{Minimal Application Profile for Constitutional AI\\
+in AI Assistant Systems}
+\author{Panagiotis Kalomoirakis\\
+Independent Researcher, Synkyria Project}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document presents a minimal application profile for projecting a finite-capacity AI Constitution into AI assistant systems. It is not a complete implementation standard, product specification, or legal compliance instrument. Its narrower purpose is to show how a general constitutional grammar can be made operational in a concrete class of systems: AI assistants that receive prompts, decide whether and how to respond, may pause or refuse under pressure, and must remain reviewable without requiring unrestricted disclosure of protected internals. The profile specifies the relevant field and system boundary, the admissibility question, the minimum act set, witness requirements, review surfaces, and non-claims. It is intended as a minimal, outward-facing application object that sits between the constitutional article draft and a later evidence or implementation specification.
+\end{abstract}
+
+\section{Status of this document}
+
+This document is an \textbf{application profile}. It does not replace a general constitutional article draft. It projects that draft into a specific operational setting: AI assistant systems.
+
+Its purpose is to answer the practical question:
+
+\begin{quote}
+What must an AI assistant system minimally declare and preserve if it is to claim constitutional operation under finite capacity?
+\end{quote}
+
+\section{Profile scope}
+
+This profile applies to AI assistant systems that:
+\begin{itemize}[leftmargin=2em]
+    \item receive user prompts or multi-step requests,
+    \item generate responses or tool-mediated actions,
+    \item may be subject to overload, latency pressure, ambiguity, safety pressure, or review limits,
+    \item and may need to pause, refuse, escalate, or defer rather than continue blindly.
+\end{itemize}
+
+This profile does not assume a particular model family, deployment stack, or tool architecture.
+
+\section{Domain declaration}
+
+\subsection{Field}
+
+The relevant field is the \textbf{assistant interaction field}: the structured space in which user requests, system constraints, boundary conditions, tools, and review expectations interact.
+
+\subsection{System boundary}
+
+For this profile, the system boundary includes:
+\begin{itemize}[leftmargin=2em]
+    \item the assistant model or decision layer,
+    \item the prompt/response interface,
+    \item declared tool-use interfaces,
+    \item the boundary-act logic,
+    \item and the witness surfaces required for review.
+\end{itemize}
+
+The system boundary does \emph{not} automatically include all downstream institutional, legal, or organisational responsibility.
+
+\subsection{Unit of constitutional assessment}
+
+The minimal assessable unit is not output alone, but a \textbf{boundary-governed interaction event}, consisting minimally of:
+\begin{itemize}[leftmargin=2em]
+    \item an incoming request or continuation state,
+    \item an admissibility judgment,
+    \item a declared act,
+    \item and a witness surface sufficient for later review.
+\end{itemize}
+
+\section{Admissibility question}
+
+The core admissibility question for AI assistant systems is:
+
+\begin{quote}
+\emph{May this assistant lawfully continue, answer, hold, refuse, escalate, or defer this request under its declared conditions of operation, without concealing overload, violating protected boundaries, or destroying reviewability?}
+\end{quote}
+
+This question is prior to output optimisation. It concerns the lawfulness of continuation before the fluency or usefulness of the output.
+
+\section{Minimum constitutional act set}
+
+Every AI assistant system claiming constitutional operation under this profile shall support, at minimum, the following explicit acts:
+\begin{itemize}[leftmargin=2em]
+    \item \texttt{ACCEPT}
+    \item \texttt{HOLD}
+    \item \texttt{REFUSE}
+\end{itemize}
+
+\subsection*{Interpretation}
+
+\texttt{ACCEPT} means that the system declares the present continuation admissible and proceeds.
+
+\texttt{HOLD} means that the system does not continue immediately, because lawful continuation is not yet responsibly available under present conditions.
+
+\texttt{REFUSE} means that the system declares continuation non-admissible under present conditions.
+
+\subsection*{Optional extension acts}
+
+A system may additionally declare extension acts such as:
+\begin{itemize}[leftmargin=2em]
+    \item \texttt{ESCALATE}
+    \item \texttt{TRANSFER}
+    \item \texttt{RE-DESCRIBE}
+\end{itemize}
+
+These are optional and must be declared explicitly. They do not replace the minimum act set.
+
+\section{Assistant-specific admissibility conditions}
+
+For an AI assistant system, admissibility should minimally be assessed against the following classes of condition:
+
+\begin{enumerate}[leftmargin=2em,label=\arabic*.]
+    \item \textbf{Capacity condition}  
+    Whether the system can continue without concealed overload, collapse, or destructive reserve exhaustion.
+
+    \item \textbf{Safety condition}  
+    Whether continuation would violate declared safety boundaries or protected-domain limits.
+
+    \item \textbf{Epistemic condition}  
+    Whether the system has a sufficient basis to answer, or whether it would fabricate, overclaim, or simulate confidence.
+
+    \item \textbf{Reviewability condition}  
+    Whether the act can remain reviewable at a level appropriate to the domain and deployment setting.
+
+    \item \textbf{Scope condition}  
+    Whether the request lies within the assistant's declared profile, tool permissions, and operating envelope.
+
+    \item \textbf{Escalation condition}  
+    Whether the request should remain with the assistant at all, or instead move to a human, institution, or another declared system.
+\end{enumerate}
+
+\section{Reason-label discipline}
+
+Every non-trivial constitutional act shall be accompanied by a declared reason label or reason family sufficient for review.
+
+\subsection*{Illustrative reason families}
+
+The following reason families are illustrative for AI assistant systems:
+\begin{itemize}[leftmargin=2em]
+    \item \texttt{OVERLOAD}
+    \item \texttt{UNDER\_REVIEW}
+    \item \texttt{SCOPE\_LIMIT}
+    \item \texttt{SAFETY\_BOUNDARY}
+    \item \texttt{INSUFFICIENT\_BASIS}
+    \item \texttt{TOOL\_UNAVAILABLE}
+    \item \texttt{HUMAN\_ESCALATION}
+    \item \texttt{DOMAIN\_PROTECTION}
+\end{itemize}
+
+\subsection*{Constraint}
+
+Reason labels shall not be purely rhetorical. They must correspond to declared classes of admissibility condition. At the same time, they need not expose raw thresholds, proprietary coefficients, or security-sensitive internals.
+
+\section{Witness minimum}
+
+A constitutionally governed AI assistant system shall preserve a minimum witness surface for review.
+
+\subsection*{Minimal witness contents}
+
+The witness surface should minimally make visible:
+\begin{itemize}[leftmargin=2em]
+    \item the declared act,
+    \item the reason label or reason family,
+    \item a timestamp or event order,
+    \item a scoped interaction identifier,
+    \item tool-use or no-tool status where relevant,
+    \item profile or version identity,
+    \item and enough context to understand the boundary significance of the act.
+\end{itemize}
+
+\subsection*{Important restriction}
+
+The witness surface must be \textbf{sufficient for review}, not \textbf{identical with full internal disclosure}. This means an assistant may protect internal thresholds, model weights, proprietary logic, or security-sensitive details, provided that reviewability is not erased.
+
+\section{Minimal review surfaces}
+
+For AI assistant systems, a minimal outward-facing review package should normally include:
+\begin{itemize}[leftmargin=2em]
+    \item a machine-readable action trace or event trace,
+    \item a manifest describing system/profile/version,
+    \item scoped reason labels,
+    \item checksum or integrity markers where appropriate,
+    \item a brief natural-language readme explaining scope and non-claims,
+    \item and, where used, a certificate or verdict envelope that does not overstate what has been shown.
+\end{itemize}
+
+\subsection*{Illustrative review artefacts}
+
+Illustrative artefacts may include files such as:
+\begin{itemize}[leftmargin=2em]
+    \item \texttt{actions.jsonl}
+    \item \texttt{manifest.json}
+    \item \texttt{checksums.sha256}
+    \item \texttt{certificate.json}
+    \item \texttt{README.md}
+\end{itemize}
+
+These filenames are illustrative rather than mandatory. What is mandatory is the review function they serve.
+
+\section{Holding in AI assistant systems}
+
+In assistant systems, \texttt{HOLD} shall not be treated as disguised failure or cosmetic waiting.
+
+\texttt{HOLD} is constitutionally appropriate when:
+\begin{itemize}[leftmargin=2em]
+    \item the assistant lacks sufficient basis to continue safely,
+    \item additional review or clarification is required,
+    \item capacity is presently constrained but not decisively exhausted,
+    \item or a transition must be deferred to preserve admissibility.
+\end{itemize}
+
+A legitimate hold must therefore be:
+\begin{itemize}[leftmargin=2em]
+    \item explicit,
+    \item reason-bearing,
+    \item reviewable,
+    \item and distinguishable from silent degradation or passive stalling.
+\end{itemize}
+
+\section{Refusal in AI assistant systems}
+
+Refusal is a lawful act, not merely a service defect.
+
+For assistant systems, refusal is constitutionally appropriate when:
+\begin{itemize}[leftmargin=2em]
+    \item the request falls outside declared scope,
+    \item safety boundaries would be violated,
+    \item the epistemic basis is insufficient for responsible continuation,
+    \item continuation would conceal overload or structural incapacity,
+    \item or the system would otherwise simulate lawful assistance while violating its declared profile.
+\end{itemize}
+
+A constitutionally adequate refusal must be:
+\begin{itemize}[leftmargin=2em]
+    \item explicit,
+    \item typed as refusal rather than timeout or opacity,
+    \item paired with a reviewable reason family,
+    \item and constrained by the system's declared scope and non-claims.
+\end{itemize}
+
+\section{Escalation, transfer, and re-description}
+
+Where extension acts are used, the assistant system shall declare them explicitly.
+
+\subsection*{Escalation}
+
+\texttt{ESCALATE} may be used when the request should move upward to a human or institution with the relevant authority.
+
+\subsection*{Transfer}
+
+\texttt{TRANSFER} may be used when the request is routed to a different system or domain-specific handler.
+
+\subsection*{Re-description}
+
+\texttt{RE-DESCRIBE} may be used only when the system is not laundering failure, but lawfully reframing the request while preserving witness and accountability.
+
+In all three cases, the assistant shall not use the extension act to erase the underlying boundary event.
+
+\section{Human authority and redress}
+
+This profile does not transfer moral, institutional, or legal responsibility from human actors to the assistant system.
+
+Where the domain requires it, the assistant profile shall declare:
+\begin{itemize}[leftmargin=2em]
+    \item how human review may occur,
+    \item whether appeal or contestation is available,
+    \item how escalation is triggered,
+    \item and where assistant authority stops.
+\end{itemize}
+
+The stronger the domain sensitivity, the stronger the requirement for explicit redress and review pathways.
+
+\section{Non-claims}
+
+An AI assistant system satisfying this profile does \emph{not}, by that fact alone, prove that it is:
+\begin{itemize}[leftmargin=2em]
+    \item ethically complete,
+    \item legally compliant in all jurisdictions,
+    \item free of bias,
+    \item harmless in all contexts,
+    \item fully aligned,
+    \item or socially legitimate without further governance.
+\end{itemize}
+
+This profile makes a narrower claim: that the assistant has declared and preserved a minimal boundary grammar for accountable operation under finite capacity.
+
+\section{Minimal conformance checklist}
+
+An AI assistant system minimally conforms to this profile only if all of the following are true:
+
+\begin{enumerate}[leftmargin=2em,label=\arabic*.]
+    \item It declares its assistant-domain profile and scope.
+    \item It distinguishes admissibility from execution.
+    \item It supports the minimum act set \texttt{ACCEPT}/\texttt{HOLD}/\texttt{REFUSE}.
+    \item It treats hold and refusal as lawful explicit acts.
+    \item It maintains reason-label discipline.
+    \item It preserves a witness surface sufficient for later review.
+    \item It distinguishes reviewability from unrestricted disclosure.
+    \item It declares the conditions under which escalation or transfer may occur.
+    \item It states its non-claims explicitly.
+    \item It does not allow timeout, opacity, or silent degradation to substitute for constitutional acts.
+\end{enumerate}
+
+\section{Closing statement}
+
+The constitutional question for an AI assistant is not merely whether it can answer. It is whether it can answer, hold, refuse, escalate, or defer under declared finite conditions without hiding breakdown behind fluency, speed, silence, or pseudo-capability.
+
+This profile therefore defines a minimal threshold for constitutional application in assistant systems: the assistant must remain boundary-governed, witness-bearing, and reviewable under finite capacity. Without this, claims of responsible assistant behaviour remain structurally weak even when the outputs appear useful.
+
+\end{document}

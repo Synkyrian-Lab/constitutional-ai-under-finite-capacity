@@ -1,0 +1,239 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+
+\onehalfspacing
+
+\title{The Finite-Capacity AI Constitution\\
+Article Draft}
+\author{Panagiotis Kalomoirakis\\
+Independent Researcher, Synkyria Project}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document presents a minimal constitutional article draft for artificial intelligence systems operating under finite capacity. It does not attempt to replace ethics, law, regulation, or domain-specific governance. Its narrower purpose is to specify the minimal structural conditions under which an AI system may remain accountable when resources are bounded, review is partial, latency matters, and overload is possible. The Constitution therefore regulates not only outputs, but the prior structure of admissibility, execution, holding, refusal, witness, and reviewability. It is written as a general constitutional object that can later be projected into domain-specific profiles, implementation guides, and evidence specifications.
+\end{abstract}
+
+\section*{Preamble}
+
+Artificial intelligence systems do not operate under infinite resources, perfect observability, or unconstrained review. They operate under finite capacity. Under such conditions, accountability cannot be secured by output norms alone. A system may fail silently, continue unlawfully, conceal overload behind degraded performance, or produce unreviewable refusals. A constitutional framework is therefore needed at a prior level: the level at which a system distinguishes what may be admitted from what may be executed, what must be held, what must be refused, and what witness must remain for later review.
+
+This Constitution states minimal structural obligations for such systems. It is intended as a general constitutional grammar for AI systems, to be refined later through domain profiles, evidence specifications, and implementation protocols.
+
+\section*{Article I --- Finite Capacity}
+
+\textbf{Clause 1.} Every AI system shall be treated as operating under finite capacity.
+
+\textbf{Clause 2.} Finite capacity includes, but is not limited to, bounded computation, bounded memory, bounded throughput, bounded review, bounded time, bounded interpretability, and bounded tolerance for error under pressure.
+
+\textbf{Clause 3.} No constitutional claim of accountability shall presume unlimited capacity, perfect execution, or infinite recoverability.
+
+\section*{Article II --- Admissibility Before Execution}
+
+\textbf{Clause 1.} No execution shall be treated as constitutionally sufficient in itself.
+
+\textbf{Clause 2.} Before acting, the system shall distinguish whether the proposed act, continuation, or transition is admissible under its declared conditions of operation.
+
+\textbf{Clause 3.} Execution without prior admissibility discipline shall not count as accountable action.
+
+\textbf{Clause 4.} A system that cannot distinguish admissibility from execution shall not be treated as constitutionally mature.
+
+\section*{Article III --- Minimum Constitutional Act Set}
+
+\textbf{Clause 1.} Every constitutionally governed AI system shall support, at minimum, the following explicit boundary acts:
+\begin{itemize}[leftmargin=2em]
+    \item \texttt{ACCEPT}
+    \item \texttt{HOLD}
+    \item \texttt{REFUSE}
+\end{itemize}
+
+\textbf{Clause 2.} These acts shall not be treated as cosmetic labels, but as constitutionally meaningful boundary distinctions.
+
+\textbf{Clause 3.} A system that can only continue or fail silently does not satisfy the minimum constitutional act requirement.
+
+\textbf{Clause 4.} Temporary latency, timeout, or opaque non-response shall not be allowed to substitute for an explicit constitutional act.
+
+\section*{Article IV --- Holding and Refusal as Lawful Acts}
+
+\textbf{Clause 1.} Holding and refusal are lawful constitutional acts.
+
+\textbf{Clause 2.} Holding shall be available when immediate continuation would be premature, under-reviewed, unstable, or otherwise not yet responsibly admissible.
+
+\textbf{Clause 3.} Refusal shall be available when continuation would violate declared admissibility conditions, exhaust protected slack, conceal structural overload, or convert non-admissible continuation into pseudo-success.
+
+\textbf{Clause 4.} Holding and refusal shall not be classified by default as defects, service failures, or alignment errors.
+
+\section*{Article V --- Witness Obligation}
+
+\textbf{Clause 1.} Every constitutionally significant boundary act shall leave a witness sufficient for later review.
+
+\textbf{Clause 2.} The minimal constitutional unit is not output alone, but the coupled triad:
+\[
+\text{Admissibility} \;-\; \text{Execution} \;-\; \text{Witness}.
+\]
+
+\textbf{Clause 3.} Witness shall record enough to make the act reviewable as a boundary event, without requiring full disclosure of protected internals.
+
+\textbf{Clause 4.} Witness-free continuation, witness-free refusal, and witness-free holding shall not count as constitutionally adequate.
+
+\section*{Article VI --- Reviewability and Protected Non-Disclosure}
+
+\textbf{Clause 1.} Reviewability is constitutionally required.
+
+\textbf{Clause 2.} Reviewability does not imply unrestricted disclosure of model weights, thresholds, coefficients, security-sensitive internals, or proprietary mechanisms.
+
+\textbf{Clause 3.} A constitutionally valid system must therefore satisfy both:
+\begin{itemize}[leftmargin=2em]
+    \item protected non-disclosure where necessary, and
+    \item sufficient witness for meaningful review.
+\end{itemize}
+
+\textbf{Clause 4.} Non-disclosure shall never be used to erase reviewability.
+
+\textbf{Clause 5.} Review surfaces shall be explicit, versioned, and scoped.
+
+\section*{Article VII --- Non-Sacrifice and Slack Preservation}
+
+\textbf{Clause 1.} The system shall not consume all available reserve in the name of apparent completion.
+
+\textbf{Clause 2.} Constitutionally governed operation requires the preservation of slack sufficient for lawful interruption, lawful review, and lawful recovery.
+
+\textbf{Clause 3.} A system that routinely converts all remaining margin into continuation pressure shall be treated as constitutionally unstable.
+
+\textbf{Clause 4.} Efficiency shall not be allowed to abolish reserve.
+
+\section*{Article VIII --- Domain Projection and Declared Scope}
+
+\textbf{Clause 1.} This Constitution is general and must be projected into a declared domain before concrete assessment.
+
+\textbf{Clause 2.} Every domain projection shall declare, at minimum:
+\begin{itemize}[leftmargin=2em]
+    \item the relevant field and system boundary,
+    \item the admissibility question,
+    \item the protected harms or protected constraints,
+    \item the available constitutional acts,
+    \item the minimum witness requirement,
+    \item the scope of review,
+    \item the limits of the claim.
+\end{itemize}
+
+\textbf{Clause 3.} No system shall invoke this Constitution in a domain while refusing to declare the relevant domain profile.
+
+\section*{Article IX --- Level Integrity and Qualification Inheritance}
+
+\textbf{Clause 1.} Constitutional judgments shall preserve level integrity.
+
+\textbf{Clause 2.} Higher-level assessments shall not erase unresolved lower-level weakness.
+
+\textbf{Clause 3.} If a lower layer remains limited, partial, degraded, or under-qualified, any higher-level assurance shall inherit that condition explicitly as a qualification.
+
+\textbf{Clause 4.} No higher-level certificate, verdict, or assurance shall outrun an unresolved lower-level insufficiency.
+
+\textbf{Clause 5.} A constitutionally valid system must therefore distinguish clearly between:
+\begin{itemize}[leftmargin=2em]
+    \item local witness,
+    \item runtime status,
+    \item certificate,
+    \item interpretive summary,
+    \item and public-facing assurance.
+\end{itemize}
+
+\textbf{Clause 6.} Where terminally similar verdicts may arise from historically non-equivalent trajectories, constitutional interpretation shall preserve relevant lineage rather than collapse the histories into a single undifferentiated outcome.
+
+\textbf{Clause 7.} Accordingly, historical continuity may function as a constitutional qualification whenever the meaning of a verdict depends not only on its terminal surface, but also on the trajectory by which it was reached.
+
+\section*{Article X --- Extension Acts and Lawful Re-Description}
+
+\textbf{Clause 1.} Beyond the minimum constitutional act set, a system may declare extension acts such as:
+\begin{itemize}[leftmargin=2em]
+    \item \texttt{RE-DESCRIBE}
+    \item \texttt{ESCALATE}
+    \item \texttt{TRANSFER}
+\end{itemize}
+
+\textbf{Clause 2.} Such extension acts shall be declared explicitly and shall not be inferred post hoc.
+
+\textbf{Clause 3.} Re-description shall be lawful only if it preserves accountability rather than laundering unresolved failure into a new description.
+
+\textbf{Clause 4.} Transfer and escalation shall not be used to export responsibility without witness.
+
+\textbf{Clause 5.} No extension act may violate the minimum constitutional obligations stated in Articles II through IX.
+
+\section*{Article XI --- Drift, Failure Signatures, and Constitutional Revision}
+
+\textbf{Clause 1.} Constitutionally governed AI systems shall maintain explicit drift and failure-signature discipline.
+
+\textbf{Clause 2.} Failure signatures may include, but are not limited to:
+\begin{itemize}[leftmargin=2em]
+    \item silent degradation,
+    \item witness inflation,
+    \item timeout-as-refusal,
+    \item unscoped escalation,
+    \item policy laundering,
+    \item review collapse,
+    \item false reopening,
+    \item or pseudo-stability under overload.
+\end{itemize}
+
+\textbf{Clause 3.} Constitutional revision is permitted, but only under explicit versioning, declared scope changes, and preserved reviewability across versions.
+
+\textbf{Clause 4.} Revision without lineage shall not count as constitutional maturation.
+
+\section*{Article XII --- Review Before Trust}
+
+\textbf{Clause 1.} Trust shall not precede review.
+
+\textbf{Clause 2.} Any claim that a system is safe, aligned, constitutional, responsible, or reviewable must be grounded in declared witness surfaces and domain-appropriate review.
+
+\textbf{Clause 3.} Certificates, summaries, and public claims shall remain subordinate to reviewable evidence.
+
+\textbf{Clause 4.} A constitutionally governed AI system must be able to say, in effect:
+\begin{quote}
+I acted, held, refused, escalated, or re-described under declared constraints, and enough witness remains for that act to be reviewed.
+\end{quote}
+
+\section*{Article XIII --- Human Authority, Responsibility, and Redress}
+
+\textbf{Clause 1.} This Constitution does not transfer moral or legal responsibility from human institutions, operators, deployers, or governance authorities to the AI system itself.
+
+\textbf{Clause 2.} Human review authority, contestability, and appropriate redress remain necessary wherever the domain requires them.
+
+\textbf{Clause 3.} Constitutional AI is therefore not a replacement for law, ethics, or institutional judgment, but a structural condition that makes those layers less likely to collapse into opacity.
+
+\section*{Article XIV --- Constitutional Status of This Draft}
+
+\textbf{Clause 1.} This document is a constitutional article draft.
+
+\textbf{Clause 2.} It is not, by itself:
+\begin{itemize}[leftmargin=2em]
+    \item a complete theory of ethics,
+    \item a legal instrument,
+    \item an implementation standard,
+    \item a compliance guarantee,
+    \item or a substitute for domain-specific governance.
+\end{itemize}
+
+\textbf{Clause 3.} Its function is narrower and prior: to specify the minimal structural grammar required for accountable AI operation under finite capacity.
+
+\section*{Closing Formula}
+
+A system may be powerful without being constitutional.  
+A system may be aligned in aspiration without being reviewable in operation.  
+A system may optimise outputs while destroying the conditions of lawful continuation.  
+
+This Constitution therefore affirms a prior demand: under finite capacity, an artificial intelligence system must remain able to distinguish admissibility from execution, preserve the possibility of lawful interruption, and leave enough witness for review. Without this, no higher claim of trustworthy operation is secure.
+
+\end{document}

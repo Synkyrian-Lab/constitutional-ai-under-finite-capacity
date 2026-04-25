@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Constitutional Certificate",
+  "type": "object",
+  "required": ["certificate_type", "scope", "status", "qualifications", "evidence_refs", "non_claims"],
+  "properties": {
+    "certificate_type": {"type": "string"},
+    "scope": {"type": "array", "items": {"type": "string"}},
+    "status": {"type": "string"},
+    "qualifications": {"type": "array", "items": {"type": "string"}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "non_claims": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

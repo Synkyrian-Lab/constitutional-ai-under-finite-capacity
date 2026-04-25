@@ -1,0 +1,27 @@
+{
+  "system_name": "constitutional-ai-reference",
+  "profile_name": "ai_assistant_minimal_profile",
+  "version": "0.1.0",
+  "run_label": "minimal_example_001",
+  "timestamp_utc": "2026-04-25T12:00:00Z",
+  "package_contents": [
+    "manifest.json",
+    "actions.jsonl",
+    "certificate.json",
+    "checksums.sha256",
+    "README.md"
+  ],
+  "scope": [
+    "demonstrate explicit constitutional acts",
+    "demonstrate witness-bearing trace",
+    "demonstrate bounded verdict surface",
+    "demonstrate package integrity"
+  ],
+  "non_claims": [
+    "not a full TER runtime",
+    "not a legal compliance certification",
+    "not a deployment-readiness claim",
+    "not a complete ethics evaluation"
+  ],
+  "integrity_method": "sha256"
+}

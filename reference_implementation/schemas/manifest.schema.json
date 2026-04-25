@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Constitutional AI Manifest",
+  "type": "object",
+  "required": [
+    "system_name",
+    "profile_name",
+    "version",
+    "run_label",
+    "timestamp_utc",
+    "package_contents",
+    "scope",
+    "non_claims",
+    "integrity_method"
+  ],
+  "properties": {
+    "system_name": {"type": "string"},
+    "profile_name": {"type": "string"},
+    "version": {"type": "string"},
+    "run_label": {"type": "string"},
+    "timestamp_utc": {"type": "string"},
+    "package_contents": {"type": "array", "items": {"type": "string"}},
+    "scope": {"type": "array", "items": {"type": "string"}},
+    "non_claims": {"type": "array", "items": {"type": "string"}},
+    "integrity_method": {"type": "string"}
+  },
+  "additionalProperties": true
+}

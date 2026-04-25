@@ -1,0 +1,22 @@
+{
+  "certificate_type": "constitutional_minimal_example",
+  "scope": [
+    "public-safe example pack",
+    "minimum constitutional artefact demonstration"
+  ],
+  "status": "REVIEWABLE_MINIMAL_PASS",
+  "qualifications": [
+    "example-only",
+    "schema-level demonstration",
+    "not evidence of richer runtime semantics"
+  ],
+  "evidence_refs": [
+    "manifest.json",
+    "actions.jsonl"
+  ],
+  "non_claims": [
+    "does not prove ethical legitimacy",
+    "does not prove deployment readiness",
+    "does not prove compliance with any jurisdiction"
+  ]
+}

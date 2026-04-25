@@ -1,0 +1,298 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\onehalfspacing
+
+\title{Constitutional AI under Finite Capacity\\
+A Policy Translation Brief}
+\author{Panagiotis Kalomoirakis\\
+Independent Researcher, Synkyria Project}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This brief translates the Constitutional AI under Finite Capacity package into public-governance language. It is written for policy audiences, public authorities, compliance teams, standards-facing groups, and decision-makers who need a clear statement of what the proposal is, what problem it addresses, what minimum structural requirements it introduces, and how it may be adopted without requiring a specific private codebase. The brief does not present a legal code, a complete ethics framework, or a mandatory software standard. Its narrower purpose is to state a practical governance proposal: AI systems operating under finite capacity should be required to distinguish admissibility from execution, support explicit boundary acts, preserve witness for review, and remain inspectable under bounded conditions of operation.
+\end{abstract}
+
+\section{Executive summary}
+
+Current AI governance discussions often focus on one of three layers:
+\begin{itemize}[leftmargin=2em]
+    \item principles and values,
+    \item legal or regulatory obligations,
+    \item or technical safety and performance controls.
+\end{itemize}
+
+Those layers are all necessary. But a structural gap remains between them. In practice, many systems still lack a clear internal grammar for what they are allowed to do when conditions are bounded, review is incomplete, ambiguity is high, or pressure is rising. When that grammar is missing, several failures become more likely:
+\begin{itemize}[leftmargin=2em]
+    \item silent degradation,
+    \item opaque refusal,
+    \item pseudo-compliance,
+    \item timeouts or partial failures presented as meaningful decisions,
+    \item and public assurance not matched by reviewable evidence.
+\end{itemize}
+
+The Constitutional AI under Finite Capacity proposal addresses that gap. Its core claim is simple:
+
+\begin{quote}
+Before an AI system acts, it should remain able to distinguish whether the act is admissible under current conditions. If it proceeds, pauses, or refuses, that boundary act should be explicit and leave a reviewable witness.
+\end{quote}
+
+This proposal does not require all AI systems to adopt one private runtime or one research codebase. It proposes a general governance standard at the level of \emph{structure}. Different systems may implement that structure differently, provided they preserve the relevant constitutional conditions.
+
+\section{What problem this proposal addresses}
+
+The proposal addresses a practical governance problem rather than a purely philosophical one.
+
+Many AI systems are assessed through outputs, benchmarks, policies, or high-level safety claims. But under real operating conditions, systems face:
+\begin{itemize}[leftmargin=2em]
+    \item finite compute and bounded throughput,
+    \item bounded review,
+    \item incomplete information,
+    \item timing constraints,
+    \item resource pressure,
+    \item safety pressure,
+    \item and domain-specific limits on what should be answered, acted on, escalated, or deferred.
+\end{itemize}
+
+Under those conditions, governance needs more than principles and more than performance metrics. It needs a minimal structural answer to the question:
+
+\begin{quote}
+What must the system be able to do, and what must it leave behind, when lawful continuation is not trivial?
+\end{quote}
+
+The present proposal answers that question at a minimum constitutional level.
+
+\section{The core proposal in plain language}
+
+The proposal can be expressed in five plain-language requirements.
+
+\subsection*{1. Treat AI systems as operating under finite capacity}
+
+No serious governance framework should assume unlimited time, unlimited context, unlimited interpretation, or unlimited recoverability. The proposal begins from bounded operation.
+
+\subsection*{2. Require admissibility before execution}
+
+A system should not only ask whether it \emph{can} produce an output. It should also ask whether continuation is \emph{admissible} under the present conditions of operation.
+
+\subsection*{3. Require explicit boundary acts}
+
+At minimum, a system should be able to:
+\begin{itemize}[leftmargin=2em]
+    \item continue,
+    \item hold,
+    \item or refuse,
+\end{itemize}
+as explicit boundary acts rather than by silence, timeout, or hidden degradation.
+
+\subsection*{4. Require witness for review}
+
+If a system continues, holds, refuses, escalates, or transfers, enough witness should remain for later review. This does not require full disclosure of all internals. It does require that the act be inspectable as a meaningful boundary event.
+
+\subsection*{5. Require review before trust}
+
+Public claims about constitutional, responsible, or reviewable operation should not outrun the evidence that the system can actually provide.
+
+\section{Why this matters for public governance}
+
+For public governance, the proposal matters because it shifts attention from abstract assurances to inspectable structure.
+
+It offers a policy-relevant middle layer between:
+\begin{itemize}[leftmargin=2em]
+    \item high-level principles such as fairness, safety, dignity, accountability, or human oversight,
+    \item and low-level engineering details that may be proprietary, system-specific, or too narrow to generalise.
+\end{itemize}
+
+That middle layer is useful because it asks for a common governance grammar without imposing one vendor's internal architecture.
+
+From a public-governance perspective, the value of the proposal is that it helps answer questions such as:
+\begin{itemize}[leftmargin=2em]
+    \item Can the system pause lawfully rather than fail opaquely?
+    \item Can it refuse explicitly rather than laundering refusal through infrastructure behaviour?
+    \item Can a reviewer later inspect why a meaningful boundary act occurred?
+    \item Are higher claims supported by lower review surfaces, or are they simply asserted?
+\end{itemize}
+
+\section{What this proposal is not}
+
+This proposal should not be misread as claiming more than it does.
+
+It is \textbf{not}:
+\begin{itemize}[leftmargin=2em]
+    \item a complete theory of ethics,
+    \item a legal code,
+    \item a final implementation standard,
+    \item a full audit regime,
+    \item or a claim that one specific research runtime must be adopted everywhere.
+\end{itemize}
+
+It is also not a claim that any system satisfying these structural requirements is thereby fully ethical, lawful, fair, or socially legitimate.
+
+Its claim is narrower:
+
+\begin{quote}
+without a minimum boundary grammar under finite capacity, stronger claims about responsible AI operation remain structurally weaker.
+\end{quote}
+
+\section{What public authorities can ask for}
+
+If a public authority, regulator-facing team, or procurement body wished to use this proposal in a practical way, the first questions need not be highly technical. They can be framed as minimum governance questions:
+
+\begin{enumerate}[leftmargin=2em,label=\arabic*.]
+    \item Does the system explicitly distinguish admissibility from execution?
+    \item Does it support explicit hold and refusal rather than silent failure or passive delay?
+    \item Does it emit a minimum witness for reviewable boundary acts?
+    \item Is there a declared scope or domain profile?
+    \item Are higher-level assurances supported by lower-level evidence?
+    \item Is the evidence reviewable without requiring unrestricted disclosure of protected internals?
+\end{enumerate}
+
+These are governance questions before they are vendor-specific technical questions.
+
+\section{A minimum outward-facing artefact layer}
+
+The proposal is accompanied by a public-safe reference implementation surface. Its purpose is not to publish a full private runtime, but to demonstrate how minimum constitutional artefacts may be generated.
+
+A minimal outward-facing artefact layer may include, for example:
+\begin{itemize}[leftmargin=2em]
+    \item a manifest,
+    \item an explicit action trace,
+    \item a bounded certificate or verdict object,
+    \item an integrity file,
+    \item and a simple validator.
+\end{itemize}
+
+This is important for public governance because it shows that the proposal is not merely rhetorical. It can be tied to inspectable artefacts without disclosing the full internal architecture of a system.
+
+\section{What adoption would look like}
+
+Adoption need not be absolute or immediate. The proposal is intentionally scalable.
+
+\subsection*{Stage 1: Structural minimum}
+An organisation adopts the constitutional minimum:
+\begin{itemize}[leftmargin=2em]
+    \item finite capacity,
+    \item admissibility before execution,
+    \item explicit acts,
+    \item witness,
+    \item reviewability,
+    \item declared scope.
+\end{itemize}
+
+\subsection*{Stage 2: Application profile}
+The organisation defines how these requirements apply to a concrete system class such as:
+\begin{itemize}[leftmargin=2em]
+    \item AI assistants,
+    \item decision-support systems,
+    \item regulated service systems,
+    \item or safety-sensitive support tools.
+\end{itemize}
+
+\subsection*{Stage 3: Evidence surface}
+The organisation defines what minimum artefacts will be emitted so that its constitutional claims can be reviewed.
+
+\subsection*{Stage 4: Stronger governance and certification}
+Where systems make stronger claims, or where domain sensitivity is higher, additional requirements may apply:
+\begin{itemize}[leftmargin=2em]
+    \item qualification inheritance,
+    \item stronger escalation discipline,
+    \item revision lineage,
+    \item or historically sensitive interpretation where terminal verdicts alone are insufficient.
+\end{itemize}
+
+This makes the proposal usable in gradual public-governance settings.
+
+\section{Why this is not a demand for one codebase}
+
+A likely misunderstanding is that if a public-safe reference implementation exists, the proposal is secretly asking everyone to adopt that exact software.
+
+That is not the case.
+
+The code surface is illustrative and external-safe. It demonstrates one way to generate the minimum artefacts required for constitutional review. The proposal concerns \textbf{structure}, not one mandatory private implementation family.
+
+In policy terms, this means:
+\begin{quote}
+organisations may implement the constitutional grammar within their own systems, provided they preserve the relevant structural conditions and review surfaces.
+\end{quote}
+
+\section{A note on language and translation}
+
+The deeper research programme from which this proposal emerges contains richer technical and theoretical vocabulary. That vocabulary may be useful in specialised research settings, but it is not required for public governance uptake.
+
+For policy, regulatory, compliance, and public-authority audiences, the proposal should be translated into a simpler operational vocabulary:
+\begin{itemize}[leftmargin=2em]
+    \item finite capacity,
+    \item admissibility,
+    \item explicit acts,
+    \item witness,
+    \item reviewability,
+    \item scope,
+    \item and qualified assurance.
+\end{itemize}
+
+That translation is not a dilution of the proposal. It is part of making the proposal usable.
+
+\section{Who this brief is for}
+
+This brief is intended for:
+\begin{itemize}[leftmargin=2em]
+    \item public authorities,
+    \item regulator-facing teams,
+    \item standards and assurance groups,
+    \item compliance and governance teams,
+    \item public-interest AI governance organisations,
+    \item and institutions evaluating how to move from abstract AI principles to inspectable system structure.
+\end{itemize}
+
+It may also be useful to private organisations that want a governance architecture more precise than values statements and less intrusive than full public disclosure of system internals.
+
+\section{Immediate use cases}
+
+This proposal is immediately useful in at least four public-facing ways:
+
+\begin{enumerate}[leftmargin=2em,label=\arabic*.]
+    \item As a procurement and governance checklist for systems making public-accountability claims.
+    \item As a review framework for whether refusal, pause, or escalation behaviour is meaningfully structured.
+    \item As a bridge between ethics language and inspectable technical artefacts.
+    \item As a public-safe reference architecture for how minimum constitutional evidence can be emitted.
+\end{enumerate}
+
+\section{What should happen next}
+
+A practical next step is not to over-expand the constitutional object itself. Instead, the right path is:
+\begin{itemize}[leftmargin=2em]
+    \item maintain the constitutional core as a clean general object,
+    \item support it with application profiles,
+    \item support those profiles with minimum evidence specifications,
+    \item and make an external-safe reference implementation surface available for inspection.
+\end{itemize}
+
+That keeps the proposal both general and operational.
+
+\section{Closing statement}
+
+AI governance needs more than principles and more than engineering fragments. It needs a minimum constitutional grammar for how systems behave under bounded conditions.
+
+The proposal translated in this brief is therefore simple in its final demand:
+
+\begin{quote}
+If an AI system operates under finite capacity, it should not continue blindly, fail silently, or refuse opaquely. It should distinguish admissibility from execution, act explicitly at the boundary, and leave enough witness for later review.
+\end{quote}
+
+This is not the whole of AI governance. But it is a practical structural proposal for making AI governance more serious, more inspectable, and less dependent on reassurance without evidence.
+
+\end{document}
